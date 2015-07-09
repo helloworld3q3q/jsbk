@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+html,body{
+    height: 100%;
+}
+.wraper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.logindiv{
+    position: absolute;
+    width: 528px;
+    height: 380px;
+    left: 50%;
+    margin-left: -269px;
+    top:50%;
+    margin-top: -190px;
+    box-shadow: 9px 15.588px 10px 0px rgba(4, 7, 20, 0.34);
+    width: 512px;
+    height: 360px;
+    z-index: 7;
+    border:1px solid rgba(155, 155, 155, 0.51);
+    border:1px solid #9b9b99\9;
+    border-color: transparent\9;
+}
+.bg_login{
+    width: 100%;
+    height: 100%;
+    filter: Alpha(opacity=35);
+    background-color:#000304;
+    opacity: 0.35;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+}
+.bg_image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bg_img{
+    display: none;
+    width: 100%;
+    filter:alpha(opacity=0); 
+    -moz-opacity:0; 
+    opacity:0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.bg_img01{
+    display: block;
+    filter:alpha(opacity=100); 
+    -moz-opacity:1; 
+    opacity:1; 
+}
+.zhezhao{
+    position: absolute;
+    top: 0;
+    background-color: #232348;
+    filter:alpha(opacity=55); 
+    -moz-opacity:0.55; 
+    opacity:0.55;
+    width: 100%;
+    height: 100%;
+}
+.logintext{
+    text-align: center;
+    margin-top: 50px;
+    *position: relative;
+    top:50px;
+    width: 138px;
+    height: 28px;
+    background: url('images/icon.png') no-repeat 8px 0;
+    margin: 50px auto 0 auto;
+}
+.user_msg_wp{
+     *margin-top: 88px;
+}
+.user_msg{
+    margin-top: 18px;
+   
+    height: 26px;
+    width: 351px;
+    padding: 7px 0;
+    background-color: #fafbfb;
+    font-size: 17px;
+    margin: 18px auto 0 auto;
+    border-radius: 2px;
+    padding-left: 18px;
+}
+.username{
+    margin-top: 46px;
+}
+.user_msg input{
+    padding: 2px 0 2px 0;
+    height: 22px;
+    width: 224px;
+    float: left;
+    margin-left: 82px
+}
+.user_msg em{
+    float: left;
+    width: 28px;
+    height: 28px;
+    background-image: url('images/icon.png');
+    background-repeat: no-repeat;
+}
+.username em{
+    background-position: -131px 0;
+}
+.pasdword em{
+    background-position: -161px 0;
+}
+.submit_but{
+   width: 369px;
+   height: 24px;
+   padding: 8px 0; 
+   border-radius: 3px;
+   background-color: #0b9abc;
+   margin: 36px auto 0 auto;
+   cursor: pointer;    
+}
+.submit_but_txt{
+    display: block;
+    margin: 0 auto;
+    background:url('images/icon.png') no-repeat -191px -2px;
+    width: 70px;
+    height: 24px;
+}
+.submit_but:hover{
+    border: 1px solid #009FC5;
+}

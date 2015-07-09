@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="loginstyle.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+     <div class="wraper">
+        <div class="bg_image">
+            <img class="bg_img bg_img01" src="images/bgimage_1.jpg"/>
+            <img class="bg_img" src="images/bgimage_2.jpg"/>
+            <div class="zhezhao"></div>
+        </div>
+        <div class="logindiv">
+            <div class="bg_login"></div>
+            <p class="logintext"></p>
+            <form action="userLogin.action" method="post" id="doLogin">
+                <div class="user_msg_wp">
+                <p class="username user_msg"><em></em><input class="" type="text" name="systemUser.realName" value="请输入用户名"/></p>
+                <p class="pasdword user_msg"><em></em><input type="text"  name="systemUser.password" value="请输入密码"/></p>
+                <input id="message" type="hidden"/>
+                <p  class="submit_but"><em class="submit_but_txt"></em></p>
+                </div>
+            </form>
+        </div>
+     </div>
+</body>
+<script type="text/javascript">
+    var currentIndex=0;
+    var alpha=20,alphaf=100;
+    var $bg_imgs = document.getElementsByClassName('bg_img');
+    var $bg_image =document.getElementsByClassName('bg_image')[0];
+    function alphaChange(showTarget,alphaVal){
+        showTarget.style.opacity = alphaVal/100;
+        showTarget.style.filter = 'alpha(opacity='+alphaVal+')';
+    }
+    function showOpac(showTarget){
+        if(alpha>=100){
+            alpha=100;
+        }else{
+            alpha += 10.2;
+        }
+        alphaChange(showTarget,alpha);
+    }
+    function hideOpac(hideTarget){
+        if(alphaf<=22){
+            alphaf=20;
+            hideTarget.style.display ="none";
+        }else{
+            alphaf-=19.5;
+        }
+        alphaChange(hideTarget,alphaf);
+    }
+    function showFunction(imgs_tag,img_cur){
+        var showfun;
+        setTimeout(function(){
+           showfun = setInterval(function(){showOpac(imgs_tag)},600);
+           imgs_tag.style.display ="block";
+        },510)
+        setTimeout(function(){clearInterval(showfun);},6000);
+    }
+
+    function hideFunction(img_cur,imgs_tag){
+        var hidefun = setInterval(function(){
+                hideOpac(img_cur);
+            },100);
+        setTimeout(function(){clearInterval(hidefun);},500);
+    }
+
+    function changeBg(){
+        if(currentIndex>1){
+            currentIndex=0;
+        }
+        var bg_height = $bg_imgs[0].offsetHeight;
+        var showtag = currentIndex+1;
+        if(showtag>1){
+            showtag=0;
+        }
+        var $bg_img_cur = $bg_imgs[currentIndex];
+        var $bg_imgs_tag = $bg_imgs[showtag];
+        hideFunction($bg_img_cur,$bg_imgs_tag);
+        showFunction($bg_imgs_tag,$bg_img_cur);
+        alpha=20;
+        alphaf=100;
+        currentIndex+=1;
+    }
+    window.onload=function(){
+        setInterval("changeBg()",10000);
+    }
+</script>
+</html>
